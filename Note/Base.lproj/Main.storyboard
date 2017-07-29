@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KjJ-mv-H3B" id="zmd-Zy-mYZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Modification Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eds-0h-AgR">
@@ -62,7 +62,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes (Title)" prompt="(Prompt)" id="cOB-3c-b6i">
                         <barButtonItem key="backBarButtonItem" title="(Back button)" id="gIh-tj-z2t"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="fC4-cK-deW">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="fC4-cK-deW">
                             <connections>
                                 <segue destination="RLc-eX-y1M" kind="show" identifier="addNote" id="sLc-mv-TZf"/>
                             </connections>
@@ -72,24 +72,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxJ-dL-ao5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1216.8" y="136.28185907046478"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ql3-xD-2sc">
-            <objects>
-                <viewController id="7H0-4z-oKO" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KTj-5n-rxx"/>
-                        <viewControllerLayoutGuide type="bottom" id="DAY-GV-UlZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EXh-r7-8a4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="04I-jS-vKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2886" y="136"/>
         </scene>
         <!--Display Note View Controller-->
         <scene sceneID="Pej-iZ-fwz">
@@ -140,6 +122,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentTextView" destination="nUc-Bc-1Qq" id="TpS-6r-t9a"/>
+                        <outlet property="titleTextField" destination="npV-5X-6Vc" id="Qif-QJ-TZM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5N-Pn-guR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="l18-SV-RvM" userLabel="Exit" sceneMemberID="exit"/>

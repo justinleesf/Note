@@ -9,6 +9,16 @@
 import UIKit
 
 class DisplayNoteViewController: UIViewController {
+    
+    var note: Note?
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var contentTextView: UITextView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        titleTextField.text = ""
+        contentTextView.text = ""
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +31,24 @@ class DisplayNoteViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let identifier = segue.identifier {
+            if identifier == "cancel" {
+                print("cancel")
+            }
+            
+            if identifier == "save" {
+                print("save")
+                
+                let note = Note()
+                
+                note.title = titleTextField.text ?? ""
+                note.content = contentTextView.text
+                
+                let listNotesTableViewController = segue.destination as! ListNotesTableViewController
+                
+                listNotesTableViewController.notes.append(note)
+                
+            }
+        }
     }
 }

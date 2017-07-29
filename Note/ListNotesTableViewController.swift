@@ -8,7 +8,14 @@
 
 import UIKit
 
+
 class ListNotesTableViewController: UITableViewController {
+    
+    var notes = [Note]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +36,20 @@ class ListNotesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return notes.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
-
-        cell.textLabel?.textColor = UIColor.black
-        cell.titleLabel?.text = "Title"
-        cell.modificationTimeLabel?.text = "Modification time"
+        
+        let row = indexPath.row
+        
+        let note = notes[row]
+        
+        cell.titleLabel.text = note.title
+        
+        cell.modificationTimeLabel.text = note.modificationTime.convertToString()
 
         return cell
     }
@@ -87,30 +98,31 @@ class ListNotesTableViewController: UITableViewController {
         if let identifier = segue.identifier {
             
             if identifier == "displayNote" {
-                print("display")
+                
+                let row = tableView.indexPathForSelectedRow!.row
+                
+                let displayNoteViewController = segue.destination as! DisplayNoteViewController
+                
+                let note = notes[row]
+                
+                displayNoteViewController.note = note
+//                displayNotesViewController.titleTextField.text = note.title
+//                displayNotesViewController.contentTextView.text = note.content
+//                
+                
             }
             
             if identifier == "addNote" {
                 print("add")
+                
             }
         }
         
     }
-    
-//    override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-//
-//    }
     
     @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {
-        if let identifier = segue.identifier {
-            if identifier == "cancel" {
-                print("Cancel")
-            }
-            if identifier == "save" {
-                print("save")
-            }
-        }
-        
-    }
 
+                
+    }
 }
+

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00FD4B11F2C5C5C00EABA4D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00FD4B01F2C5C5C00EABA4D /* Note.swift */; };
+		D00FD4BA1F2C698300EABA4D /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00FD4B91F2C698300EABA4D /* NSDateExtension.swift */; };
 		D0D90EBA1F29CC9F0097963D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D90EB91F29CC9F0097963D /* AppDelegate.swift */; };
 		D0D90EBC1F29CC9F0097963D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D90EBB1F29CC9F0097963D /* ViewController.swift */; };
 		D0D90EBF1F29CC9F0097963D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D90EBD1F29CC9F0097963D /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D00FD4B01F2C5C5C00EABA4D /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		D00FD4B91F2C698300EABA4D /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		D0D90EB61F29CC9F0097963D /* Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Note.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D90EB91F29CC9F0097963D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0D90EBB1F29CC9F0097963D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D00FD4B61F2C697300EABA4D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D00FD4B91F2C698300EABA4D /* NSDateExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D0D90EAD1F29CC9F0097963D = {
 			isa = PBXGroup;
 			children = (
@@ -61,10 +73,10 @@
 		D0D90EB81F29CC9F0097963D /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				D00FD4B61F2C697300EABA4D /* Extensions */,
 				D0D90ECE1F29CFDA0097963D /* Views */,
 				D0D90ED01F29CFF50097963D /* Models */,
 				D0D90ECF1F29CFE50097963D /* Controllers */,
-				D0D90ECD1F29CFD10097963D /* Extensions */,
 				D0D90ECC1F29CFC50097963D /* Helpers */,
 				D0D90EB91F29CC9F0097963D /* AppDelegate.swift */,
 				D0D90EBB1F29CC9F0097963D /* ViewController.swift */,
@@ -90,13 +102,6 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		D0D90ECD1F29CFD10097963D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
 		D0D90ECE1F29CFDA0097963D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +122,7 @@
 		D0D90ED01F29CFF50097963D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D00FD4B01F2C5C5C00EABA4D /* Note.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -197,8 +203,10 @@
 				D0D90ED61F29D3DE0097963D /* ListNotesTableViewCell.swift in Sources */,
 				D0D90ED21F29D36E0097963D /* ListNotesTableViewController.swift in Sources */,
 				D0D90EBC1F29CC9F0097963D /* ViewController.swift in Sources */,
+				D00FD4BA1F2C698300EABA4D /* NSDateExtension.swift in Sources */,
 				D0D90ED41F29D3B70097963D /* DisplayNotesViewController.swift in Sources */,
 				D0D90EBA1F29CC9F0097963D /* AppDelegate.swift in Sources */,
+				D00FD4B11F2C5C5C00EABA4D /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
