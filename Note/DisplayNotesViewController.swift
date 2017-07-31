@@ -16,8 +16,14 @@ class DisplayNoteViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     
     override func viewWillAppear(_ animated: Bool) {
-        titleTextField.text = ""
-        contentTextView.text = ""
+        
+        if let actualNote = note {
+            titleTextField.text = actualNote.title
+            contentTextView.text = actualNote.content
+        } else {
+            titleTextField.text = ""
+            contentTextView.text = ""
+        }
     }
 
     override func viewDidLoad() {
@@ -31,24 +37,20 @@ class DisplayNoteViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == "cancel" {
-                print("cancel")
+        var listNotesTableViewController = segue.destination as! ListNotesTableViewController
+        if segue.identifier == "save" {
+            if let note = note {
+                note.title = titleTextField.text ?? ""
+                note.content = contentTextView.text ?? ""
+                listNotesTableViewController.tableView.reloadData()
+            } else {
+                var newNote = Note()
+                newNote.content = contentTextView.text
+                newNote.title = titleTextField.text!
+                newNote.modificationTime = NSDate()
+                listNotesTableViewController.notes.append(newNote)
             }
             
-            if identifier == "save" {
-                print("save")
-                
-                let note = Note()
-                
-                note.title = titleTextField.text ?? ""
-                note.content = contentTextView.text
-                
-                let listNotesTableViewController = segue.destination as! ListNotesTableViewController
-                
-                listNotesTableViewController.notes.append(note)
-                
-            }
         }
     }
 }
