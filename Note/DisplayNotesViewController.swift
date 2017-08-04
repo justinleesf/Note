@@ -6,7 +6,9 @@
 //  Copyright © 2017 toBeDetermined. All rights reserved.
 //
 
+
 import UIKit
+import RealmSwift
 
 class DisplayNoteViewController: UIViewController {
     
@@ -37,14 +39,14 @@ class DisplayNoteViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var listNotesTableViewController = segue.destination as! ListNotesTableViewController
+        let listNotesTableViewController = segue.destination as! ListNotesTableViewController
         if segue.identifier == "save" {
             if let note = note {
                 note.title = titleTextField.text ?? ""
                 note.content = contentTextView.text ?? ""
                 listNotesTableViewController.tableView.reloadData()
             } else {
-                var newNote = Note()
+                let newNote = Note()
                 newNote.content = contentTextView.text
                 newNote.title = titleTextField.text!
                 newNote.modificationTime = NSDate()

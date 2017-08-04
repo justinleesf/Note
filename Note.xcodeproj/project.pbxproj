@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D009D3C41F306F5C0082F30A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D009D3C21F306F5C0082F30A /* Realm.framework */; };
+		D009D3C51F306F5C0082F30A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D009D3C31F306F5C0082F30A /* RealmSwift.framework */; };
+		D009D3C81F30709C0082F30A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D009D3C21F306F5C0082F30A /* Realm.framework */; };
+		D009D3C91F30709C0082F30A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D009D3C21F306F5C0082F30A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D009D3CA1F30709C0082F30A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D009D3C31F306F5C0082F30A /* RealmSwift.framework */; };
+		D009D3CB1F30709C0082F30A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D009D3C31F306F5C0082F30A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D00FD4B11F2C5C5C00EABA4D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00FD4B01F2C5C5C00EABA4D /* Note.swift */; };
 		D00FD4BA1F2C698300EABA4D /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00FD4B91F2C698300EABA4D /* NSDateExtension.swift */; };
 		D0D90EBA1F29CC9F0097963D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D90EB91F29CC9F0097963D /* AppDelegate.swift */; };
@@ -19,7 +25,24 @@
 		D0D90ED61F29D3DE0097963D /* ListNotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D90ED51F29D3DE0097963D /* ListNotesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D009D3CC1F30709C0082F30A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D009D3CB1F30709C0082F30A /* RealmSwift.framework in Embed Frameworks */,
+				D009D3C91F30709C0082F30A /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D009D3C21F306F5C0082F30A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		D009D3C31F306F5C0082F30A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		D00FD4B01F2C5C5C00EABA4D /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D00FD4B91F2C698300EABA4D /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		D0D90EB61F29CC9F0097963D /* Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Note.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,12 +62,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D009D3C81F30709C0082F30A /* Realm.framework in Frameworks */,
+				D009D3C51F306F5C0082F30A /* RealmSwift.framework in Frameworks */,
+				D009D3CA1F30709C0082F30A /* RealmSwift.framework in Frameworks */,
+				D009D3C41F306F5C0082F30A /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D009D3C11F306F470082F30A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D009D3C21F306F5C0082F30A /* Realm.framework */,
+				D009D3C31F306F5C0082F30A /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D00FD4B61F2C697300EABA4D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,7 +92,6 @@
 		D0D90EAD1F29CC9F0097963D = {
 			isa = PBXGroup;
 			children = (
-				D0D90ECB1F29CFB40097963D /* Frameworks */,
 				D0D90EB81F29CC9F0097963D /* Note */,
 				D0D90EB71F29CC9F0097963D /* Products */,
 			);
@@ -73,6 +108,7 @@
 		D0D90EB81F29CC9F0097963D /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				D009D3C11F306F470082F30A /* Frameworks */,
 				D00FD4B61F2C697300EABA4D /* Extensions */,
 				D0D90ECE1F29CFDA0097963D /* Views */,
 				D0D90ED01F29CFF50097963D /* Models */,
@@ -86,13 +122,6 @@
 				D0D90EC51F29CC9F0097963D /* Info.plist */,
 			);
 			path = Note;
-			sourceTree = "<group>";
-		};
-		D0D90ECB1F29CFB40097963D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D0D90ECC1F29CFC50097963D /* Helpers */ = {
@@ -137,6 +166,7 @@
 				D0D90EB21F29CC9F0097963D /* Sources */,
 				D0D90EB31F29CC9F0097963D /* Frameworks */,
 				D0D90EB41F29CC9F0097963D /* Resources */,
+				D009D3CC1F30709C0082F30A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,54 +312,16 @@
 			};
 			name = Debug;
 		};
-		D0D90EC71F29CC9F0097963D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		D0D90EC91F29CC9F0097963D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2T53KRM5SJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Note",
+				);
 				INFOPLIST_FILE = Note/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toBeDetermined.Note;
@@ -338,19 +330,6 @@
 			};
 			name = Debug;
 		};
-		D0D90ECA1F29CC9F0097963D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2T53KRM5SJ;
-				INFOPLIST_FILE = Note/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.toBeDetermined.Note;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -358,19 +337,17 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0D90EC61F29CC9F0097963D /* Debug */,
-				D0D90EC71F29CC9F0097963D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		D0D90EC81F29CC9F0097963D /* Build configuration list for PBXNativeTarget "Note" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0D90EC91F29CC9F0097963D /* Debug */,
-				D0D90ECA1F29CC9F0097963D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

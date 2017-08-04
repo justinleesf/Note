@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 class ListNotesTableViewController: UITableViewController {
     
@@ -28,7 +28,6 @@ class ListNotesTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -72,7 +71,7 @@ class ListNotesTableViewController: UITableViewController {
             notes.remove(at: indexPath.row)
             
             tableView.reloadData()
-            
+
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
